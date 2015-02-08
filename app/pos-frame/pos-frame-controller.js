@@ -1,16 +1,20 @@
 angular.module('posApp')
-  .controller('PosFrameCtrl', ['$scope', '$http',function ($scope, $http){
+  .controller('PosFrameCtrl', ['$scope', 'Product',function ($scope, Product){
 
-    var data = { 
-      name: 'Eternal Teeshirt', 
-      exclPrice: 260.86956, 
-      taxRate: 0.15 
+    $scope.data = Product.data;
+    $scope.init();
+
+    $scope.init = function (){
+      $scope.lists = [];
+      $scope.status = {};
+      $scope.status.exclusiveMode = false;
     }
 
-    $scope.data = data;
-    $scope.lists = [];
-    $scope.status = {};
-    $scope.status.exclusiveMode = false;
+    scope.addItem = function (){
+      var item = Product.beforeAdd(angular.copy(data))
+      item.qtt += 1;
+      scope.lists.push(item);
+    }
 
     $scope.removeItem = function ($index){
       if($scope.editQtt) {
