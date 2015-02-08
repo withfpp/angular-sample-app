@@ -27,3 +27,13 @@
 .highlight {
   color: $mainColor;
 }
+
+
+@keyframes blinker {  
+  0% { opacity: 0.4; }
+  50% { opacity: 1; }
+  100% { opacity: 0.4; }
+}
+.blink_me {
+  animation: blinker steps(1) 1s infinite;
+}

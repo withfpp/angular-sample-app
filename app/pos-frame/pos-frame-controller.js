@@ -5,11 +5,10 @@ angular.module('posApp')
     $scope.data = Product.data;
     $scope.init = init;
 
-    $scope.removeItem = function ($index){
-      if($scope.editQtt) {
-        $scope.editQtt = false;  
-      }
-      $scope.lists.splice($index, 1);
+    $scope.removeItem = function (item){
+      $scope.lists.splice(
+        $scope.lists.indexOf(item), 
+      1);
     }
 
     $scope.toggleEditStatus = function (item, prop){
@@ -20,10 +19,6 @@ angular.module('posApp')
       }
 
       item[prop] = !item[prop];
-    }
-
-    $scope.clearItems = function (){
-      $scope.lists = [];
     }
 
     $scope.displayLineSum = function(item){
@@ -73,6 +68,7 @@ angular.module('posApp')
       $scope.lists = [];
       $scope.status = {};
       $scope.status.exclusiveMode = false;
+      $scope.status.editActivated = false;
     }
 
   }])

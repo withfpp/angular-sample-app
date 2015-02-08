@@ -1,11 +1,11 @@
 <div class="vend-pd">
-  <div class="vend-pd inner" ng-repeat="list in lists | reverse">
+  <div class="vend-pd inner" ng-repeat="list in lists">
     <div class="added-list clearfix">
       <div>
         
         <span ng-class="{'pl-clicked': list.editQtt}" ng-click="toggleEditStatus(list,'editQtt')" class="pl qtt pull-left">{{list.qtt}}</span>
         
-        <span ng-click="removeItem($index)" class="pl close pull-left">x</span>
+        <span ng-click="removeItem(list)" class="pl close pull-left">x</span>
         
         <span ng-if="!list.editQtt && !list.editPrc" class="pl name pull-left nameBox">{{list.name}}</span>
         
