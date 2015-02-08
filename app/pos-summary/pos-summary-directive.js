@@ -1,5 +1,5 @@
 angular.module('posApp')
-  .directive('posSummary', [function(){
+  .directive('posSummary', ['ModalService',function (ModalService){
     return {
       restrict: 'EA',
       scope: {
@@ -41,6 +41,18 @@ angular.module('posApp')
         scope.clearItems = function (){
           scope.lists = [];
         }
+
+        scope.showModal = function() {
+          ModalService.showModal({
+            templateUrl: "modal/modal.html",
+            controller: "ModalCtrl"
+          }).then(function(modal) {
+            modal.element.modal();
+            modal.close.then(function(result) {
+              if(result === 'Yes') scope.clearItems();
+            }); 
+          });
+        };
 
       }
     }

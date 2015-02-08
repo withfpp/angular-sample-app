@@ -19,7 +19,6 @@
   }  
 }
 
-
 .pl {
   &.qtt {
     @include setWidth(10%);
@@ -101,4 +100,9 @@
   }
 }
 
+.vend-modal-mimic {
+  border-radius: 5px 5px 0 0;
+  border-bottom-color: #6e1416;
+  background-image: -webkit-gradient(linear,50% 0,50% 100%,color-stop(0%,#e63e40),color-stop(100%,#b4282a));
+}
 

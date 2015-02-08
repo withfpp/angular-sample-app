@@ -2,7 +2,8 @@
 
 angular.module('posApp', [
   'ngAnimate',
-  'ui.router'
+  'ui.router',
+  'angularModalService'
 ])
 
 .config(['$stateProvider','$urlRouterProvider', '$locationProvider',function ($stateProvider, $urlRouterProvider, $locationProvider) {

@@ -6,7 +6,7 @@ angular.module('posApp')
       name: 'Eternal Teeshirt', 
       exclPrice: 260.86956, 
       taxRate: 0.15 
-    }
+    };
 
     var beforeAdd = function (item){
       item.inclPrice = Number((item.exclPrice * (1 + item.taxRate)).toFixed(2));
