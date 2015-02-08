@@ -4,3 +4,66 @@
   </div>
 </div>
 
+<div class="vend-pd">
+  <div class="vend-pd inner">
+    <div class="added-list clearfix">
+      <div>
+        <span class="pl qtt pull-left">qtt</span>
+        <span class="pl close pull-left">x</span>
+        <span class="pl name pull-left nameBox">list name</span>
+        <span class="pl name pull-left editQttBox">
+          <span class="pl edit pull-left">
+            <i class="fa fa-arrow-up"></i>  
+          </span>
+          <span class="pl edit pull-left">
+            <i class="fa fa-arrow-down"></i>
+          </span>
+        </span>
+
+        <span class="pl name pull-left editPrcBox">
+          <span class="pl setPrice pull-left">
+            <input class="setPrice" type="number" placeholder="Input new exclPrice">
+          </span>
+        </span>
+
+        <span class="pl prc pull-left">linesum</span>  
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<footer>
+
+  <div class="list-wrapper">
+  <div class="vend-pay">
+    <div class="vend-pay inner total">
+      <span>Sub-total</span>
+      <span ng-if="status.exclusiveMode"> (EXCLUSIVE MODE)</span>
+      <span class="pull-right">subtotal</span>
+    </div>
+    <div class="vend-pay inner tax">
+      <span>Tax (GST)</span>
+      <span class="pull-right">tax</span>
+    </div>
+    <div class="vend-pay inner total">
+      <span>Total Price</span>
+      <span class="pull-right">price</span>
+    </div>
+  </div>
+</div>
+
+
+
+  <div class="wrapper">
+    <div class="vend-btn">
+      <div ng-click="clearItems()" class="vend-btn inner">Boomshakalaka</div>
+    </div>
+  </div>
+
+  <div>
+    admin...
+  </div>
+  
+</footer>

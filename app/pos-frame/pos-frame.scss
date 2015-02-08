@@ -6,11 +6,36 @@ $mainBorderColor: #E1E1E8;
 $listPanelColor: #ffffff;
 $adminPanelColor: #ffffff;
 
+@mixin basic-list($padding, $border-color){
+  padding: $padding;
+  border-bottom: 1px solid $border-color;
+  &:nth-child(1) {
+    border-top: 1px solid $border-color;
+  }
+}
+
+@mixin setWidth($width){
+  display: inline-block;
+  width: $width;
+}
+body {
+  -webkit-font-smoothing: antialiased;
+}
+.bg {
+  background:$mainBGColor;
+}
+.highlight {
+  color: $mainColor;
+}
+
 .wrapper {
   padding: 10px;
   background:$mainBGColor;
 }
-
+.list-wrapper {
+  padding-top: 10px;
+  background:$mainBGColor;
+}
 .vend-btn {
   background: $mainButtonBGColor;
   &:hover {
@@ -22,5 +47,93 @@ $adminPanelColor: #ffffff;
     color: $mainButtonTextColor;
     cursor: pointer;
     font-weight: bold;
+  }
+}
+.vend-pd {
+  &.inner {
+    background: $listPanelColor;
+    @include basic-list(12px, $mainBorderColor); 
+  }  
+}
+
+
+.pl {
+  &.qtt {
+    @include setWidth(10%);
+    -webkit-transition:all 0.2s ease;
+    transition:all 0.2s ease;
+    &.pl-clicked {
+      @extend .blink_me;
+      cursor: pointer;
+      font-weight: bold;
+      color: $mainColor;
+      font-size: 24px;
+      margin: -8px 0 -8px;
+    }
+    &:hover {
+      @extend .pl-clicked;
+      color: darken($mainColor, 20%);
+    }
+  }
+  &.close {
+    line-height: 0.9;
+    @include setWidth(5%);
+  }
+  &.name {
+    padding-left: 10px;
+    @include setWidth(65%);
+  }
+  &.prc {
+    text-align: right;
+    @include setWidth(20%);
+    -webkit-transition:all 0.2s ease;
+    transition:all 0.2s ease;
+    &.pl-clicked {
+      @extend .blink_me;
+      cursor: pointer;
+      font-weight: bold;
+      color: $mainColor;
+      font-size: 24px;
+      margin: -8px 0 -8px;
+    }
+    &:hover {
+      @extend .pl-clicked;
+      color: darken($mainColor, 20%);
+    }
+  }
+  &.edit {
+    text-align: center;
+    @include setWidth(50%);
+    &:hover {
+      cursor: pointer;
+      font-size: 24px;
+      margin: -8px 0 -8px;
+      -webkit-transition:all 0.2s ease;
+      transition:all 0.2s ease;
+      color: darken($mainButtonBGColor, 20%);
+    }
+  }
+  &.setPrice {
+    text-align: center;
+    margin: -3px 0;
+    @include setWidth(50%);
+    &:hover {
+      cursor: pointer;
+      -webkit-transition:all 0.2s ease;
+      transition:all 0.2s ease;
+      color: darken($mainButtonBGColor, 20%);
+    }
+    input.setPrice{
+      float: left;
+      width: 100%
+    }
+  }
+}
+
+.vend-pay {
+  background: $listPanelColor;
+  &.inner {
+    background: $listPanelColor;
+    @include basic-list(10px, $mainBorderColor);
   }
 }
