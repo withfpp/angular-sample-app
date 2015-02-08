@@ -1,20 +1,8 @@
 angular.module('posApp')
   .controller('PosFrameCtrl', ['$scope', 'Product',function ($scope, Product){
-
+    init();
     $scope.data = Product.data;
-    $scope.init();
-
-    $scope.init = function (){
-      $scope.lists = [];
-      $scope.status = {};
-      $scope.status.exclusiveMode = false;
-    }
-
-    scope.addItem = function (){
-      var item = Product.beforeAdd(angular.copy(data))
-      item.qtt += 1;
-      scope.lists.push(item);
-    }
+    $scope.init = init;
 
     $scope.removeItem = function ($index){
       if($scope.editQtt) {
@@ -83,6 +71,12 @@ angular.module('posApp')
         item.qtt -=1;
       }
       return item;
+    }
+
+    function init(){
+      $scope.lists = [];
+      $scope.status = {};
+      $scope.status.exclusiveMode = false;
     }
 
   }])
