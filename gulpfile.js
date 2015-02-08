@@ -17,7 +17,7 @@ bower = require('gulp-bower');
 
 var paths = {
   styles : ['app/**/*.scss'],
-  js : ['app/*.js','app/payment/*.js' ],
+  js : ['app/*.js','app/**/*.js','!app/bower_components/**/*.js'],
   views : ['app/**/*.html'],
   dest : '.dist',
   bower: 'app/bower_components'

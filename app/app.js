@@ -1,7 +1,6 @@
 'use strict';
 
-(function(){
-  angular.module('posApp', [
+angular.module('posApp', [
   'ngAnimate',
   'ui.router'
 ])
@@ -12,4 +11,3 @@
 
     $locationProvider.html5Mode(true);
   }])
-}());
