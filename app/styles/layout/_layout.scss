@@ -13,6 +13,23 @@
   padding: 10px;
   background:$mainBGColor;
 }
+.admin-panel {
+  &.inner {
+    background: lighten($mainBGColor, 50%);
+    @include basic-list(12px 0px , $mainBorderColor);
+  }
+  .switch {
+    margin-bottom: -5px;
+  }
+  .question {
+    line-height: 2.3;
+  }
+}
+.discount {
+  &.form-control {
+    width: 76%;
+  }
+}
 .list-wrapper {
   padding-top: 10px;
   background:$mainBGColor;

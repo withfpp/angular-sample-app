@@ -1,5 +1,5 @@
 angular.module('posApp')
-  .directive('posSummary', ['ModalService',function (ModalService){
+  .directive('posSummary', ['ModalService', 'Calc', function (ModalService, Calc){
     return {
       restrict: 'EA',
       scope: {
@@ -8,36 +8,16 @@ angular.module('posApp')
       templateUrl: 'pos-summary/pos-summary.html',
       link: function (scope, element, attrs){
         
-        scope.displaySubTotal = function(){
-          var i;
-          var len = scope.lists.length
-          var subTotal = 0;
-          for(i = 0; i < len; i++){
-            subTotal += scope.lists[i].exclPrice * scope.lists[i].qtt;
-          }
-          return subTotal.toFixed(2);
-        }
-
         scope.displayTax = function(){
-          var len = scope.lists.length;
-          var i;
-          var taxSum = 0;
-          for(i = 0; i < len; i++){
-            taxSum += scope.lists[i].tax * scope.lists[i].qtt;
-          }
-          return taxSum.toFixed(2);
+          return Calc.displayTax(scope.lists);
         }
-
-        scope.totalPrice = function(){
-          var len = scope.lists.length;
-          var i;
-          var totalPrice = 0;
-          for(i = 0; i < len; i++){
-            totalPrice += (scope.lists[i].inclPrice * scope.lists[i].qtt);
-          }
-          return totalPrice.toFixed(2);
+        scope.displaySubTotal = function(){
+          return Calc.displaySubTotal(scope.lists);
         }
-
+        scope.totalPrice = function (){ 
+          return Calc.totalPrice(scope.lists);   
+        }
+        
         scope.clearItems = function (){
           scope.lists = [];
         }

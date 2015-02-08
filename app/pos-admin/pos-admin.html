@@ -1,3 +1,27 @@
-  <div>
-    admin...
+<div class="admin-panel">
+  
+  <div class="admin-panel inner price-mode clearfix">
+    <div class="question col-xs-9">Do you want Exclusive Price Mode ?</div>
+    <div class="switch col-xs-3">
+      <input vend-checkbox-watcher id="cmn-toggle-1" class="cmn-toggle cmn-toggle-round" type="checkbox" ng-model="status.exclusiveMode">
+      <label for="cmn-toggle-1"></label>
+    </div>  
   </div>
+
+  <div class="admin-panel inner price-mode clearfix">
+    <div class="question col-xs-9">Do you want to set discount ?</div>
+    <div class="switch col-xs-3">
+      <input vend-checkbox-watcher id="cmn-toggle-2" class="cmn-toggle cmn-toggle-round" type="checkbox" ng-model="status.discount">
+      <label for="cmn-toggle-2"></label>
+    </div>  
+  </div>
+
+  <div ng-if="status.discount" class="admin-panel inner price-mode clearfix">
+    <input type="text" class="discount form-control col-xs-9" id="discount" placeholder="E.g. 20% or 2.50" ng-model="status.discountPrice">
+    <button ng-click="addDiscount(status.discountPrice)" class="btn btn-default" class="col-xs-3">I'm Cool</button>
+
+  </div>
+
+ 
+
+</div>
