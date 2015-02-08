@@ -9,7 +9,7 @@
       link: function (scope, element, attrs){
         var data = scope.item;
         scope.addItem = function (){
-          var item = Product.beforeAdd(angular.copy(data))
+          var item = Product.beforeAdd(angular.copy(data));
           item.qtt += 1;
           scope.lists.push(item);
         }

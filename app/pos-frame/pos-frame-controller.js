@@ -1,5 +1,6 @@
 angular.module('posApp')
   .controller('PosFrameCtrl', ['$scope', 'Product',function ($scope, Product){
+    
     init();
     $scope.data = Product.data;
     $scope.init = init;
@@ -52,11 +53,6 @@ angular.module('posApp')
       $scope.lists.push(discountItem);
     }
 
-    /**
-     * [modifyQtt description]
-     * @param  {[Object]} item
-     * @param  {[Boolean]} addOrDeduct : true => add, false => deduct
-     */
     $scope.modifyQtt = function (item, addOrDeduct){
       addOrDeduct ? add(item) : deduct(item);
     }
