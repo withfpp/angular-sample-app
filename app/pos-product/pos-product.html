@@ -1,27 +1,31 @@
 <div class="vend-pd">
-  <div class="vend-pd inner" ng-repeat="list in lists">
+  <div class="vend-pd inner" ng-repeat="list in lists | reverse">
     <div class="added-list clearfix">
       <div>
-        <span class="pl qtt pull-left">qtt</span>
-        <span class="pl close pull-left">x</span>
-        <span class="pl name pull-left nameBox">list name</span>
-        <span class="pl name pull-left editQttBox">
-          <span class="pl edit pull-left">
-            <i class="fa fa-arrow-up"></i>  
+        
+        <span ng-class="{'pl-clicked': list.editQtt}" ng-click="toggleEditStatus(list,'editQtt')" class="pl qtt pull-left">{{list.qtt}}</span>
+        
+        <span ng-click="removeItem($index)" class="pl close pull-left">x</span>
+        
+        <span ng-if="!list.editQtt && !list.editPrc" class="pl name pull-left nameBox">{{list.name}}</span>
+        
+        <span ng-show="list.editQtt" class="pl name pull-left editQttBox">
+           <span ng-click="modifyQtt(list, true)" class="pl edit pull-left">
+          <i class="fa fa-arrow-up"></i>  
           </span>
-          <span class="pl edit pull-left">
+          <span ng-click="modifyQtt(list, false)" class="pl edit pull-left">
             <i class="fa fa-arrow-down"></i>
           </span>
         </span>
 
-        <span class="pl name pull-left editPrcBox">
-          <span class="pl setPrice pull-left">
-            <input class="setPrice" type="number" placeholder="Input new exclPrice">
+        <span ng-show="list.editPrc" class="pl name pull-left editPrcBox">
+          <span ng-click="modifyPrc(list)" class="pl setPrice pull-left">
+            <input class="setPrice" type="number" ng-change="updatePrice(list)" ng-model="list.exclPrice" placeholder="Input new exclPrice">
           </span>
         </span>
 
-        <span class="pl prc pull-left">linesum</span>  
-
+        <span ng-class="{'pl-clicked': list.editPrc}" ng-click="toggleEditStatus(list,'editPrc', $event)" class="pl prc pull-left">{{displayLineSum(list, true) | number:2}}
+        </span>
       </div>
     </div>
   </div>

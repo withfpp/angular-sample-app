@@ -1,0 +1,29 @@
+.editQttBox {
+  -webkit-transition:all linear 1.5s;
+  transition:all linear 1.5s;
+  &.ng-hide{
+    -webkit-transition:all linear 0s;
+    transition:all linear 0s;
+    opacity: 0;
+  }
+  &.ng-show{
+    opacity: 1;
+  }
+}
+
+.editPrcBox {
+  -webkit-transition:all linear 1.5s;
+  transition:all linear 1.5s;
+  &.ng-hide{
+    -webkit-transition:all linear 0s;
+    transition:all linear 0s;
+    opacity: 0;
+  }
+  &.ng-show{
+    opacity: 1;
+  }
+}
+
+.highlight {
+  color: $mainColor;
+}

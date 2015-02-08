@@ -1,0 +1,19 @@
+@mixin basic-list($padding, $border-color){
+  padding: $padding;
+  border-bottom: 1px solid $border-color;
+  &:nth-child(1) {
+    border-top: 1px solid $border-color;
+  }
+}
+@mixin setWidth($width){
+  display: inline-block;
+  width: $width;
+}
+.wrapper {
+  padding: 10px;
+  background:$mainBGColor;
+}
+.list-wrapper {
+  padding-top: 10px;
+  background:$mainBGColor;
+}

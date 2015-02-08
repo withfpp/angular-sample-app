@@ -1,4 +1,5 @@
-.directive('posProduct', ['Product', function (Product){
+angular.module('posApp')
+  .directive('posProduct', ['Product', function (Product){
     return {
       restrict: 'EA',
       templateUrl: 'pos-product/pos-product.html'
