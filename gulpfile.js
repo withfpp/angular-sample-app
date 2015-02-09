@@ -73,8 +73,13 @@ gulp.task('bower', function() { 
          .pipe(gulp.dest(paths.dest + '/bower_components')) 
 });
 
-gulp.task('dev', ['styles','scripts','views'])
-gulp.task('build', ['clean','styles','scripts','views', 'bower']);
+
+gulp.task('init', ['styles', 'scripts', 'views', 'bower']);
+
+gulp.task('dev', ['clean', 'styles','scripts','views']);
+
+gulp.task('build', ['clean', 'init']);
+
 gulp.task('default', ['dev', 'browser-sync', 'watch']);
 
 
