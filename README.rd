@@ -1,4 +1,4 @@
-##Hi, Jin, Sarah, Chris and Vanessa (VP?).
+Hi, Jin, Sarah, Chris and Vanessa (VP?).
 
 how to Up And Running :
 please type below
