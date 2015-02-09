@@ -5,12 +5,14 @@ how to Up And Running :
 First, install package
 
   - npm install
+  
   - bower install
 
 In order to build, please type below
 
   - gulp init (just for init bower first time.)
-  - gulp 
+  
+  - gulp (to run) 
   
 After type above, BrowserSync will serve you.
 
