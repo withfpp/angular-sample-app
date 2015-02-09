@@ -69,16 +69,16 @@ gulp.task('watch', function() {
 })
 
 gulp.task('bower', function() { 
-    return bower()
-         .pipe(gulp.dest(paths.dest + '/bower_components')) 
+  return bower()
+     .pipe(gulp.dest(paths.dest + '/bower_components')) 
 });
 
 
 gulp.task('init', ['styles', 'scripts', 'views', 'bower']);
 
-gulp.task('dev', ['clean', 'styles','scripts','views']);
+gulp.task('dev', ['styles','scripts','views']);
 
-gulp.task('build', ['clean', 'init']);
+gulp.task('rebuild', ['clean', 'init']);
 
 gulp.task('default', ['dev', 'browser-sync', 'watch']);
 
