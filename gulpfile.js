@@ -48,7 +48,6 @@ gulp.task('styles', function() {
 gulp.task('scripts', function(){
   return gulp.src(paths.js)
     .pipe(concat('app.js'))
-    //.pipe(uglify())
     .pipe(gulp.dest(paths.dest));
 })
 
