@@ -29,23 +29,9 @@ angular.module('posApp')
     }
 
     $scope.updatePrice = function(item){
-      item.inclPrice = Number((item.exclPrice * (1 + item.taxRate)).toFixed(2));
-    }
-
-    $scope.addDiscount = function(value){
-      var discountItem = {
-        name: 'DISCOUNT',
-        exclPrice: -value * beforeSave($('.vend-pay.inner.total span.pull-right').eq(1).text()),
-        inclPrice: -value * beforeSave($('.vend-pay.inner.total span.pull-right').eq(1).text()),
-        qtt: 1,
-        tax: 0
-      }
-
-      function beforeSave(v){
-        return Number(v.replace(/[^0-9\.]+/g,""));
-      }
-
-      $scope.lists.push(discountItem);
+      item.inclPrice = Number(
+        (item.exclPrice * (1 + item.taxRate)
+      ).toFixed(2));
     }
 
     $scope.modifyQtt = function (item, addOrDeduct){

@@ -1,7 +1,13 @@
 ##Hi, Jin, Sarah, Chris and Vanessa (VP?).
 
 how to Up And Running :
-please type below
+
+First, install package
+
+  - npm install
+  - bower install
+
+In order to build, please type below
 
   - gulp init (just for init bower first time.)
   - gulp 
