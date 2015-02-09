@@ -11,13 +11,15 @@ angular.module('posApp')
         scope.displayTax = function(){
           return Calc.displayTax(scope.lists);
         }
+        
         scope.displaySubTotal = function(){
           return Calc.displaySubTotal(scope.lists);
         }
+
         scope.totalPrice = function (){ 
           return Calc.totalPrice(scope.lists);   
         }
-        
+
         scope.clearItems = function (){
           scope.lists = [];
         }
@@ -33,7 +35,6 @@ angular.module('posApp')
             }); 
           });
         };
-
       }
     }
   }])

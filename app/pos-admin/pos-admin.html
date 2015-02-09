@@ -1,4 +1,5 @@
-<div class="admin-panel">
+
+  <div class="admin-panel">
   
   <div class="admin-panel inner price-mode clearfix">
     <div class="question col-xs-9">Do you want Exclusive Price Mode ?</div>
@@ -16,12 +17,12 @@
     </div>  
   </div>
 
-  <div ng-if="status.discount" class="admin-panel inner price-mode clearfix">
+  <div ng-if="status.discount" class="admin-panel inner discount clearfix">
     <input type="text" class="discount form-control col-xs-9" id="discount" placeholder="E.g. 20% or 2.50" ng-model="status.discountPrice">
-    <button ng-click="addDiscount(status.discountPrice)" class="btn btn-default" class="col-xs-3">I'm Cool</button>
+    <button ng-disabled="!status.discountPrice" ng-click="addDiscount(status.discountPrice)" class="btn btn-default pull-right" class="col-xs-3">I'm Cool</button>
 
   </div>
 
  
 
-</div>
+  </div>

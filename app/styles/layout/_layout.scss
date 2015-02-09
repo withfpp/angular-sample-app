@@ -17,6 +17,9 @@
   &.inner {
     background: lighten($mainBGColor, 50%);
     @include basic-list(12px 0px , $mainBorderColor);
+    &.discount {
+      padding: 10px;
+    }
   }
   .switch {
     margin-bottom: -5px;
@@ -33,4 +36,9 @@
 .list-wrapper {
   padding-top: 10px;
   background:$mainBGColor;
+}
+.main-section {
+  padding-bottom: 310px;
+  padding-top: 58px;
+  overflow: auto;
 }

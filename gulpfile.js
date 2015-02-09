@@ -41,7 +41,7 @@ gulp.task('styles', function() {
     .pipe(minify())
     .pipe(concat('main.css'))
     .pipe(gulp.dest(paths.dest + '/styles'))
-    .pipe(notify({ message: 'U must be Jin || Sarah || Chris' }));
+    .pipe(notify({ message: 'Hello, Jin || Sarah || Chris' }));
 });
 
 
