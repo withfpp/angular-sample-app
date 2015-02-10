@@ -19,8 +19,6 @@ angular.module('posApp')
       return item;
     }
 
-
-
     return {
       data: data,
       beforeAdd: beforeAdd

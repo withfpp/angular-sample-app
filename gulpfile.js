@@ -37,7 +37,7 @@ gulp.task('styles', function() {
     .pipe(sass())
     .pipe(autoprefixer('last 2 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4'))
     .pipe(gulp.dest(paths.dest + '/styles'))
-    .pipe(rename({ suffix: '.min' }))
+    //.pipe(rename({ suffix: '.min' }))
     .pipe(minify())
     .pipe(concat('main.css'))
     .pipe(gulp.dest(paths.dest + '/styles'))

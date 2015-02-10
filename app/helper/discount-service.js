@@ -32,7 +32,7 @@ angular.module('posApp')
       var priceToAdd = percentToDecimal(val) * toNum(totalPrice);
       item.exclPrice = -priceToAdd;
       item.inclPrice = -priceToAdd;
-      
+
       return item;
     }
 
